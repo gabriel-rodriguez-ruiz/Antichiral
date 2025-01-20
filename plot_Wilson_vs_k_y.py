@@ -23,7 +23,7 @@ Lambda = 0.56
 theta = np.pi/2     #spherical coordinates
 phi = 0
 
-B = 2*Delta_0    #2*Delta_0
+B = 0.5*Delta_0    #2*Delta_0
 B_x = B * np.sin(theta) * np.cos(phi)
 B_y = B * np.sin(theta) * np.sin(phi)
 B_z = B * np.cos(theta)
@@ -70,8 +70,8 @@ fig.suptitle(r"$L_x=$"+f"{L_x}"
              +r"; $\mu=$"+f"{np.round(S.mu, 2)}")
 axs[0].set_ylim((-2, 2))
 
-axs[1].plot(k_y_values, Berry_B[:, 0], label=r"$\theta_1$", linewidth=5)
-axs[1].plot(k_y_values, Berry_B[:, 1], label=r"$\theta_2$", linewidth=5)
+axs[1].scatter(k_y_values, Berry_B[:, 0], label=r"$\theta_1$", linewidth=5)
+axs[1].scatter(k_y_values, Berry_B[:, 1], label=r"$\theta_2$", linewidth=5)
 
 axs[1].set_xlabel(r"$k_y$", fontsize=30)
 axs[1].set_ylabel(r"$\theta_n$", fontsize=30)
